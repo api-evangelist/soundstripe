@@ -1,0 +1,140 @@
+apiCommonsPlans: '0.1'
+provider:
+  id: soundstripe
+  name: Soundstripe
+  url: https://www.soundstripe.com
+description: >-
+  Soundstripe sells subscription access to its royalty-free music, sound-effects,
+  and stock-video catalogs to individual creators, freelancers, agencies, brands,
+  podcasters, filmmakers, and enterprises. The API is positioned as a partner
+  offering — pricing for platform integration, music resale, and custom licensing
+  is negotiated directly via the business team rather than published as a list
+  price. The subscription plans below are catalog access plans; specific list
+  prices change frequently and are surfaced at the live pricing page rather than
+  fixed here.
+plans:
+  - id: creator-music
+    name: Creator (Music)
+    description: >-
+      Royalty-free music subscription for individual content creators. Includes
+      a single digital license covering YouTube, Instagram, TikTok, and other
+      social platforms, with unlimited downloads of the music catalog.
+    audience: Individual Creator
+    billing:
+      models:
+        - subscription
+      cycles:
+        - monthly
+        - annual
+    entitlements:
+      - Royalty-free music library access
+      - Single digital license
+      - Unlimited downloads while active
+      - License continues for downloaded tracks after cancellation
+    pricingUrl: https://www.soundstripe.com/library/pricing
+  - id: creator-music-sfx
+    name: Creator (Music + SFX)
+    description: >-
+      Adds sound-effects library access on top of the music subscription. Same
+      single digital license model.
+    audience: Individual Creator
+    billing:
+      models:
+        - subscription
+      cycles:
+        - monthly
+        - annual
+    entitlements:
+      - Music library access
+      - Sound-effects library access
+      - Single digital license
+      - Unlimited downloads while active
+    pricingUrl: https://www.soundstripe.com/library/pricing
+  - id: creator-all-access
+    name: Creator All-Access (Music + SFX + Video)
+    description: >-
+      Bundles music, sound effects, and stock video footage (HD through 8K) with
+      unlimited downloads and the comprehensive digital license.
+    audience: Individual Creator
+    billing:
+      models:
+        - subscription
+      cycles:
+        - monthly
+        - annual
+    entitlements:
+      - Music library access
+      - Sound-effects library access
+      - Stock-video footage access
+      - Perpetual single-use license on downloaded footage
+      - Unlimited downloads while active
+    pricingUrl: https://www.soundstripe.com/library/pricing
+  - id: business
+    name: Business
+    description: >-
+      Subscription tier for agencies, brands, production companies, and other
+      organizations that need broader commercial licensing and team usage rights.
+    audience: Business / Agency
+    billing:
+      models:
+        - subscription
+      cycles:
+        - monthly
+        - annual
+    entitlements:
+      - Commercial-use licensing
+      - Team / multi-seat usage rights
+      - Music, SFX, and (where bundled) video access
+    pricingUrl: https://www.soundstripe.com/business
+  - id: enterprise
+    name: Enterprise
+    description: >-
+      Custom contracts for large agencies, brands, universities, and enterprise
+      production teams. Includes broader indemnification, custom seat counts,
+      and dedicated account management.
+    audience: Enterprise
+    billing:
+      models:
+        - custom
+    entitlements:
+      - Custom commercial licensing scope
+      - Custom seat counts and team management
+      - Cross-channel clearance and indemnification
+      - Dedicated account management
+    contact: https://www.soundstripe.com/business
+  - id: api-partner
+    name: API / Platform Partner
+    description: >-
+      Partner program for embedding the Soundstripe catalog into another product
+      or platform via the REST API. Pricing is negotiated and may include API
+      integration fees, music resale arrangements, or custom licensing structures.
+    audience: Platform / Tool Maker
+    billing:
+      models:
+        - custom
+    entitlements:
+      - REST API access (api.soundstripe.com)
+      - Cross-channel clearance for end-user output
+      - Commercial coverage and indemnification
+      - Developer-portal access and support
+    contact: https://www.soundstripe.com/api
+  - id: single-track
+    name: Single-Song License
+    description: >-
+      One-off license purchase for a single track outside of a subscription.
+    audience: One-Off Buyer
+    billing:
+      models:
+        - one-time
+    entitlements:
+      - Single-song digital license
+    pricingUrl: https://www.soundstripe.com/library/pricing
+notes:
+  - >-
+    Soundstripe routes pricing through `app.soundstripe.com/pricing` (canonical
+    `https://www.soundstripe.com/library/pricing`). List prices are subject to
+    change; consult the live pricing page for current rates.
+  - >-
+    The API is not exposed as a self-service paid plan on the subscriber pricing
+    page — it is sold through the business / partner team at
+    https://www.soundstripe.com/api.

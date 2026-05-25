@@ -1,0 +1,45 @@
+apiCommonsRateLimits: '0.1'
+provider:
+  id: soundstripe
+  name: Soundstripe
+  url: https://www.soundstripe.com
+api:
+  id: soundstripe:api
+  name: Soundstripe API
+  baseURL: https://api.soundstripe.com
+  documentation: https://docs.soundstripe.com/reference/rate-limits
+policies:
+  - id: requests-per-second
+    name: Requests per Second
+    description: >-
+      The basic Soundstripe API limiter restricts the number of requests per
+      second per API key. Each client is allowed up to 25 API requests within
+      any given one-second window.
+    scope: per-api-key
+    type: rate
+    limit:
+      value: 25
+      unit: request
+      window:
+        value: 1
+        unit: second
+    overageResponse:
+      status: 429
+      reason: Too Many Requests
+guidance:
+  - >-
+    Implement error handling that catches `429 Too Many Requests` and retries
+    with exponential backoff plus jitter to avoid thundering herds.
+  - >-
+    Queue or throttle outbound API traffic in your integration to stay under
+    25 req/sec per key.
+  - >-
+    Cache responses where the data is stable (categories, playlist categories,
+    individual song detail) to reduce request volume.
+notes:
+  - >-
+    Rate limits are applied per client, typically keyed by the API key used in
+    the request.
+  - >-
+    Soundstripe does not currently publish per-endpoint sub-limits, concurrency
+    caps, or daily quota figures.

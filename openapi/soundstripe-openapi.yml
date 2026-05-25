@@ -1,0 +1,321 @@
+openapi: 3.1.0
+info:
+  title: Soundstripe API
+  version: '1'
+  description: >-
+    Server-to-server REST API for the Soundstripe royalty-free music, sound-effects,
+    and AI music supervisor catalog. Responses follow the JSON:API specification.
+    Authentication is token-based via the `Authorization` header. The API rate
+    limit is 25 requests per second per API key; exceeding it returns HTTP 429.
+  contact:
+    name: Soundstripe API
+    url: https://docs.soundstripe.com
+  license:
+    name: Soundstripe API Terms of Use
+    url: https://docs.soundstripe.com/docs/api-terms-of-use
+servers:
+  - url: https://api.soundstripe.com
+    description: Production
+security:
+  - TokenAuth: []
+tags:
+  - name: Songs
+    description: Catalog song retrieval with artists and audio files.
+  - name: Sound Effects
+    description: Sound-effect library and category browsing.
+  - name: Categories
+    description: Tagging and category metadata for songs and SFX.
+  - name: Playlists
+    description: Soundstripe-curated playlists and their categories.
+  - name: Private Playlists
+    description: User-scoped playlists for organizing songs and sound effects.
+  - name: Supe Search
+    description: Asynchronous AI music supervisor for natural-language and image-based catalog matching.
+  - name: Supe Assets
+    description: Reference image and video uploads consumed by Supe Search.
+paths:
+  /v1/songs/{song_id}:
+    get:
+      operationId: retrieveSong
+      summary: Retrieve a Song
+      description: Retrieve a song with its primary artist and primary audio file relationships.
+      tags: [Songs]
+      parameters:
+        - $ref: '#/components/parameters/SongId'
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+  /v1/sound_effects:
+    get:
+      operationId: listSoundEffects
+      summary: List Sound Effects
+      description: List sound effects with optional filtering by category and tags.
+      tags: [Sound Effects]
+      parameters:
+        - $ref: '#/components/parameters/PageNumber'
+        - $ref: '#/components/parameters/PageSize'
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+  /v1/sound_effects/{sound_effect_id}:
+    get:
+      operationId: retrieveSoundEffect
+      summary: Retrieve a Sound Effect
+      tags: [Sound Effects]
+      parameters:
+        - name: sound_effect_id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+  /v1/categories:
+    get:
+      operationId: listCategories
+      summary: List Categories
+      description: List sound-effect categories.
+      tags: [Categories]
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+  /v1/playlist_categories:
+    get:
+      operationId: listPlaylistCategories
+      summary: List Playlist Categories
+      tags: [Playlists]
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+  /v1/playlists:
+    get:
+      operationId: listPlaylists
+      summary: List Playlists
+      description: List Soundstripe-curated playlists.
+      tags: [Playlists]
+      parameters:
+        - $ref: '#/components/parameters/PageNumber'
+        - $ref: '#/components/parameters/PageSize'
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+  /v1/playlists/{playlist_id}:
+    get:
+      operationId: retrievePlaylist
+      summary: Retrieve a Playlist
+      description: Retrieve a curated playlist, optionally including its songs and audio files via the `include` parameter.
+      tags: [Playlists]
+      parameters:
+        - $ref: '#/components/parameters/PlaylistId'
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+  /v1/my_media/playlists:
+    get:
+      operationId: listPrivatePlaylists
+      summary: List Private Playlists
+      tags: [Private Playlists]
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+    post:
+      operationId: createPrivatePlaylist
+      summary: Create a Private Playlist
+      tags: [Private Playlists]
+      requestBody:
+        $ref: '#/components/requestBodies/JsonApi'
+      responses:
+        '201':
+          $ref: '#/components/responses/JsonApi'
+  /v1/my_media/playlists/{playlist_id}:
+    parameters:
+      - $ref: '#/components/parameters/PlaylistId'
+    get:
+      operationId: retrievePrivatePlaylist
+      summary: Retrieve a Private Playlist
+      tags: [Private Playlists]
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+    patch:
+      operationId: updatePrivatePlaylist
+      summary: Update a Private Playlist
+      tags: [Private Playlists]
+      requestBody:
+        $ref: '#/components/requestBodies/JsonApi'
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+    delete:
+      operationId: deletePrivatePlaylist
+      summary: Delete a Private Playlist
+      tags: [Private Playlists]
+      responses:
+        '204':
+          description: No Content
+  /v1/my_media/playlists/{playlist_id}/songs:
+    parameters:
+      - $ref: '#/components/parameters/PlaylistId'
+    post:
+      operationId: addSongsToPrivatePlaylist
+      summary: Add Songs to a Private Playlist
+      tags: [Private Playlists]
+      requestBody:
+        $ref: '#/components/requestBodies/JsonApi'
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+    delete:
+      operationId: removeSongsFromPrivatePlaylist
+      summary: Remove Songs From a Private Playlist
+      tags: [Private Playlists]
+      requestBody:
+        $ref: '#/components/requestBodies/JsonApi'
+      responses:
+        '204':
+          description: No Content
+  /v1/my_media/playlists/{playlist_id}/sound_effects:
+    parameters:
+      - $ref: '#/components/parameters/PlaylistId'
+    post:
+      operationId: addSoundEffectsToPrivatePlaylist
+      summary: Add Sound Effects to a Private Playlist
+      tags: [Private Playlists]
+      requestBody:
+        $ref: '#/components/requestBodies/JsonApi'
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+    delete:
+      operationId: removeSoundEffectsFromPrivatePlaylist
+      summary: Remove Sound Effects From a Private Playlist
+      tags: [Private Playlists]
+      requestBody:
+        $ref: '#/components/requestBodies/JsonApi'
+      responses:
+        '204':
+          description: No Content
+  /v1/supe/search:
+    post:
+      operationId: createSearch
+      summary: Create a Search
+      description: >-
+        Create a Supe AI music supervisor search. Accepts a natural-language `query`,
+        a `context` describing the scene, and/or up to 11 `asset_ids` (10 images + 1
+        video). At least one of `query`, `context`, or `asset_ids` is required.
+        `callback_url` (HTTPS) is required for asynchronous delivery. Returns 200
+        immediately when an equivalent search is cached within 24 hours, otherwise
+        202 with a search ID; final results arrive via the configured webhook.
+      tags: [Supe Search]
+      requestBody:
+        required: true
+        content:
+          application/vnd.api+json:
+            schema:
+              type: object
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+        '202':
+          $ref: '#/components/responses/JsonApi'
+  /v1/supe/search/{search_id}:
+    get:
+      operationId: retrieveSearch
+      summary: Retrieve a Search
+      description: Retrieve the current status and results of a Supe search; refreshes signed audio URLs (which expire seven days after generation).
+      tags: [Supe Search]
+      parameters:
+        - name: search_id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+  /v1/supe/assets:
+    post:
+      operationId: uploadAsset
+      summary: Upload an Asset
+      description: >-
+        Upload a single reference image or video to be referenced by a later Supe
+        search. Multipart form-data with a required `file` field and optional
+        `content_type` override. Image: JPEG/PNG/WebP, max 20 MB, max 4096 px per
+        axis. Video: MP4/QuickTime/WebM, max 500 MB, max 10 minutes. Processing is
+        asynchronous; the response is 202 with a `pending` asset.
+      tags: [Supe Assets]
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [file]
+              properties:
+                file:
+                  type: string
+                  format: binary
+                content_type:
+                  type: string
+      responses:
+        '202':
+          $ref: '#/components/responses/JsonApi'
+  /v1/supe/assets/{asset_id}:
+    get:
+      operationId: retrieveAsset
+      summary: Retrieve an Asset
+      description: Retrieve the processing state of a previously uploaded asset. Assets are scoped to the requesting API key; references from other keys look like 404.
+      tags: [Supe Assets]
+      parameters:
+        - name: asset_id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+components:
+  securitySchemes:
+    TokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: >-
+        Token authentication. Send `Authorization: Token <api-key>`. Keys are
+        privileged — server-to-server use only, never from client-side code.
+  parameters:
+    SongId:
+      name: song_id
+      in: path
+      required: true
+      description: The song's ID.
+      schema: { type: string }
+    PlaylistId:
+      name: playlist_id
+      in: path
+      required: true
+      description: The playlist's ID.
+      schema: { type: string }
+    PageNumber:
+      name: page[number]
+      in: query
+      required: false
+      schema: { type: integer, minimum: 1 }
+    PageSize:
+      name: page[size]
+      in: query
+      required: false
+      schema: { type: integer, minimum: 1, maximum: 100 }
+  requestBodies:
+    JsonApi:
+      required: true
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
+  responses:
+    JsonApi:
+      description: JSON:API response.
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object

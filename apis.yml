@@ -1,0 +1,120 @@
+aid: soundstripe
+url: https://raw.githubusercontent.com/api-evangelist/soundstripe/refs/heads/main/apis.yml
+name: Soundstripe
+kind: company
+description: >-
+  Soundstripe is a Nashville-based subscription platform that licenses
+  royalty-free music, sound effects, and stock video to creators, agencies,
+  podcasters, filmmakers, and enterprises. The catalog spans roughly
+  120,000 human-made tracks from Grammy-winning and independent artists,
+  nearly 100,000 sound effects, and 100,000+ stock video clips (HD through
+  8K) — all pre-cleared under a single digital license that covers YouTube,
+  Instagram, TikTok, podcasting, and commercial use, with stems and
+  cut-downs available for many songs. Soundstripe also publishes a
+  server-to-server REST API at api.soundstripe.com (JSON:API, token auth,
+  25 req/sec, signed webhooks) that exposes songs, sound effects,
+  playlists, private playlists, and "Supe" — an AI music supervisor that
+  matches catalog tracks to natural-language briefs, scene context, and
+  reference imagery via asynchronous search and asset upload endpoints.
+  Native integrations exist for Adobe Premiere Pro, Adobe Express, and
+  Twitch; partner programs cover API embedding, music resale, and custom
+  licensing for tool makers and platforms.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Music
+  - Sound Effects
+  - Stock Video
+  - Royalty Free
+  - Licensing
+  - Subscription
+  - Creators
+  - Content Creation
+  - Video Production
+  - Podcasting
+  - AI Music Supervisor
+  - Stems
+created: '2026-05-25'
+modified: '2026-05-25'
+specificationVersion: '0.20'
+apis:
+  - aid: soundstripe:api
+    name: Soundstripe API
+    description: >-
+      Server-to-server REST API for embedding the Soundstripe catalog into
+      creator tools, editing suites, and platforms. JSON:API responses, token
+      authentication via the Authorization header, and 25 requests per second.
+      Endpoints cover song retrieval, sound-effect listing, categories,
+      curated playlists, private (user-scoped) playlist management, and the
+      Supe AI search workflow (asset upload, natural-language search, signed
+      webhook delivery of matched songs with audio files and artists).
+    humanURL: https://docs.soundstripe.com
+    baseURL: https://api.soundstripe.com
+    version: v1
+    tags:
+      - Music
+      - Sound Effects
+      - Playlists
+      - Search
+      - AI Music Supervisor
+      - Webhooks
+    properties:
+      - type: Documentation
+        url: https://docs.soundstripe.com
+      - type: Authentication
+        url: https://docs.soundstripe.com/reference/authentication
+      - type: RateLimits
+        url: https://docs.soundstripe.com/reference/rate-limits
+      - type: Webhooks
+        url: https://docs.soundstripe.com/reference/webhooks
+      - type: TermsOfService
+        url: https://docs.soundstripe.com/docs/api-terms-of-use
+      - type: OpenAPI
+        url: openapi/soundstripe-openapi.yml
+      - type: LLMsTxt
+        url: https://docs.soundstripe.com/llms.txt
+common:
+  - type: Website
+    url: https://www.soundstripe.com
+  - type: SignUp
+    url: https://app.soundstripe.com/signup
+  - type: SignIn
+    url: https://app.soundstripe.com/login
+  - type: Pricing
+    url: https://www.soundstripe.com/library/pricing
+  - type: Music
+    url: https://www.soundstripe.com/royalty-free-music
+  - type: SoundEffects
+    url: https://www.soundstripe.com/sfx
+  - type: Video
+    url: https://www.soundstripe.com/stock-video
+  - type: Business
+    url: https://www.soundstripe.com/business
+  - type: APILandingPage
+    url: https://www.soundstripe.com/api
+  - type: DeveloperPortal
+    url: https://docs.soundstripe.com
+  - type: Licensing
+    url: https://www.soundstripe.com/licensing
+  - type: Blog
+    url: https://www.soundstripe.com/blog
+  - type: Help
+    url: https://help.soundstripe.com
+  - type: Contact
+    url: https://www.soundstripe.com/contact-us
+  - type: Twitter
+    url: https://twitter.com/soundstripeinc
+  - type: Instagram
+    url: https://www.instagram.com/soundstripe
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/soundstripe
+  - type: YouTube
+    url: https://www.youtube.com/@Soundstripe
+  - type: Plans
+    url: plans/soundstripe-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/soundstripe-rate-limits.yml
+  - type: FinOps
+    url: finops/soundstripe-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

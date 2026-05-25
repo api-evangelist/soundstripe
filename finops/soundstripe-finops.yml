@@ -1,0 +1,79 @@
+apiCommonsFinOps: '0.1'
+provider:
+  id: soundstripe
+  name: Soundstripe
+  url: https://www.soundstripe.com
+api:
+  id: soundstripe:api
+  name: Soundstripe API
+billingModel:
+  type: subscription
+  description: >-
+    Soundstripe runs a subscription business: creators, businesses, and
+    enterprises pay a recurring fee for catalog access and the bundled digital
+    license. API access is sold separately as a partner / platform engagement
+    rather than as metered, per-request consumption. There is no published
+    per-call price, no per-download charge inside an active subscription, and
+    no public usage-based pricing surface.
+  cycles:
+    - monthly
+    - annual
+    - custom
+chargeCategories:
+  - id: subscription
+    name: Catalog Subscription
+    description: Recurring subscription for music, sound effects, and/or video catalog access.
+    billable: true
+    metering: flat-fee per cycle
+  - id: single-license
+    name: Single-Song License
+    description: One-time purchase of a single track license outside of a subscription.
+    billable: true
+    metering: per-track
+  - id: api-partnership
+    name: API / Platform Partnership
+    description: >-
+      Negotiated contract for embedding the Soundstripe catalog via the REST API.
+      Commercial structure may combine integration fees, music resale revenue
+      share, and / or custom licensing.
+    billable: true
+    metering: custom
+  - id: api-requests
+    name: API Requests (Operational)
+    description: >-
+      Raw API requests within an existing partnership are not separately billed;
+      they are governed by the 25-req/sec rate limit rather than a per-call
+      meter.
+    billable: false
+    metering: not metered
+  - id: webhook-delivery
+    name: Webhook Delivery
+    description: Signed webhook delivery for Supe search results.
+    billable: false
+    metering: not metered
+focusAlignment:
+  ServiceCategory: Media & Content Licensing
+  ServiceSubcategory: Royalty-Free Music, Sound Effects, Stock Video
+  ChargeCategory: Subscription
+  PricingCategory: Flat Rate (subscription) and Custom (partner)
+  CommitmentDiscount: Annual Plan Discount (where applicable)
+costObservability:
+  - >-
+    Subscription costs are visible in the customer's Soundstripe billing area
+    under the account they manage at app.soundstripe.com.
+  - >-
+    Partner / enterprise contract billing is handled offline through the
+    Soundstripe business team.
+  - >-
+    The API does not expose a usage or billing endpoint; there is no programmatic
+    way to retrieve current spend, remaining quota, or invoice data.
+optimizationLevers:
+  - Move from monthly to annual billing where annual pricing offers a discount.
+  - Right-size the plan tier to the licensed surfaces actually used (music only vs. music + SFX vs. all-access including video).
+  - For high-volume integrators, negotiate a platform / partner contract rather than stacking individual subscriptions.
+  - Cache API responses where data is stable to reduce request rate (operational, not direct cost).
+notes:
+  - >-
+    Because the API itself is not metered, FinOps for Soundstripe centers on
+    subscription right-sizing and partner contract terms rather than per-call
+    spend optimization.
