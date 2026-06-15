@@ -1,0 +1,454 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Soundstripe API",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Songs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve a Song",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.soundstripe.com/v1/songs/:song_id",
+            "params": [
+              {
+                "name": "song_id",
+                "value": "",
+                "type": "path",
+                "description": "The song's ID."
+              }
+            ]
+          },
+          "docs": "Retrieve a song with its primary artist and primary audio file relationships."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Sound Effects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Sound Effects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.soundstripe.com/v1/sound_effects",
+            "params": [
+              {
+                "name": "page[number]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page[size]",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List sound effects with optional filtering by category and tags."
+        },
+        {
+          "info": {
+            "name": "Retrieve a Sound Effect",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.soundstripe.com/v1/sound_effects/:sound_effect_id",
+            "params": [
+              {
+                "name": "sound_effect_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a Sound Effect"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Categories",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.soundstripe.com/v1/categories"
+          },
+          "docs": "List sound-effect categories."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Playlists",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Playlist Categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.soundstripe.com/v1/playlist_categories"
+          },
+          "docs": "List Playlist Categories"
+        },
+        {
+          "info": {
+            "name": "List Playlists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.soundstripe.com/v1/playlists",
+            "params": [
+              {
+                "name": "page[number]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page[size]",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Soundstripe-curated playlists."
+        },
+        {
+          "info": {
+            "name": "Retrieve a Playlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.soundstripe.com/v1/playlists/:playlist_id",
+            "params": [
+              {
+                "name": "playlist_id",
+                "value": "",
+                "type": "path",
+                "description": "The playlist's ID."
+              }
+            ]
+          },
+          "docs": "Retrieve a curated playlist, optionally including its songs and audio files via the `include` parameter."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Private Playlists",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Private Playlists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.soundstripe.com/v1/my_media/playlists"
+          },
+          "docs": "List Private Playlists"
+        },
+        {
+          "info": {
+            "name": "Create a Private Playlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.soundstripe.com/v1/my_media/playlists",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a Private Playlist"
+        },
+        {
+          "info": {
+            "name": "Retrieve a Private Playlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.soundstripe.com/v1/my_media/playlists/:playlist_id",
+            "params": [
+              {
+                "name": "playlist_id",
+                "value": "",
+                "type": "path",
+                "description": "The playlist's ID."
+              }
+            ]
+          },
+          "docs": "Retrieve a Private Playlist"
+        },
+        {
+          "info": {
+            "name": "Update a Private Playlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.soundstripe.com/v1/my_media/playlists/:playlist_id",
+            "params": [
+              {
+                "name": "playlist_id",
+                "value": "",
+                "type": "path",
+                "description": "The playlist's ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a Private Playlist"
+        },
+        {
+          "info": {
+            "name": "Delete a Private Playlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.soundstripe.com/v1/my_media/playlists/:playlist_id",
+            "params": [
+              {
+                "name": "playlist_id",
+                "value": "",
+                "type": "path",
+                "description": "The playlist's ID."
+              }
+            ]
+          },
+          "docs": "Delete a Private Playlist"
+        },
+        {
+          "info": {
+            "name": "Add Songs to a Private Playlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.soundstripe.com/v1/my_media/playlists/:playlist_id/songs",
+            "params": [
+              {
+                "name": "playlist_id",
+                "value": "",
+                "type": "path",
+                "description": "The playlist's ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add Songs to a Private Playlist"
+        },
+        {
+          "info": {
+            "name": "Remove Songs From a Private Playlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.soundstripe.com/v1/my_media/playlists/:playlist_id/songs",
+            "params": [
+              {
+                "name": "playlist_id",
+                "value": "",
+                "type": "path",
+                "description": "The playlist's ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Remove Songs From a Private Playlist"
+        },
+        {
+          "info": {
+            "name": "Add Sound Effects to a Private Playlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.soundstripe.com/v1/my_media/playlists/:playlist_id/sound_effects",
+            "params": [
+              {
+                "name": "playlist_id",
+                "value": "",
+                "type": "path",
+                "description": "The playlist's ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add Sound Effects to a Private Playlist"
+        },
+        {
+          "info": {
+            "name": "Remove Sound Effects From a Private Playlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.soundstripe.com/v1/my_media/playlists/:playlist_id/sound_effects",
+            "params": [
+              {
+                "name": "playlist_id",
+                "value": "",
+                "type": "path",
+                "description": "The playlist's ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Remove Sound Effects From a Private Playlist"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Supe Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a Search",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.soundstripe.com/v1/supe/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a Supe AI music supervisor search. Accepts a natural-language `query`, a `context` describing the scene, and/or up to 11 `asset_ids` (10 images + 1 video). At least one of `query`, `context`, or `asset_ids` is required. `callback_url` (HTTPS) is required for asynchronous delivery. Returns 200 immediately when an equivalent search is cached within 24 hours, otherwise 202 with a search ID; final results arrive via the configured webhook."
+        },
+        {
+          "info": {
+            "name": "Retrieve a Search",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.soundstripe.com/v1/supe/search/:search_id",
+            "params": [
+              {
+                "name": "search_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the current status and results of a Supe search; refreshes signed audio URLs (which expire seven days after generation)."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Supe Assets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upload an Asset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.soundstripe.com/v1/supe/assets",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "content_type",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upload a single reference image or video to be referenced by a later Supe search. Multipart form-data with a required `file` field and optional `content_type` override. Image: JPEG/PNG/WebP, max 20 MB, max 4096 px per axis. Video: MP4/QuickTime/WebM, max 500 MB, max 10 minutes. Processing is asynchronous; the response is 202 with a `pending` asset."
+        },
+        {
+          "info": {
+            "name": "Retrieve an Asset",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.soundstripe.com/v1/supe/assets/:asset_id",
+            "params": [
+              {
+                "name": "asset_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the processing state of a previously uploaded asset. Assets are scoped to the requesting API key; references from other keys look like 404."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
