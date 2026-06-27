@@ -70,14 +70,14 @@ apis:
         url: https://docs.soundstripe.com/docs/api-terms-of-use
       - type: OpenAPI
         url: openapi/soundstripe-openapi.yml
-      - type: LLMsTxt
+      - type: LlmsText
         url: https://docs.soundstripe.com/llms.txt
 common:
   - type: Website
     url: https://www.soundstripe.com
-  - type: SignUp
+  - type: Signup
     url: https://app.soundstripe.com/signup
-  - type: SignIn
+  - type: Login
     url: https://app.soundstripe.com/login
   - type: Pricing
     url: https://www.soundstripe.com/library/pricing
