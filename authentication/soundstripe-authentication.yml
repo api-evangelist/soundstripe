@@ -1,0 +1,17 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/soundstripe-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: TokenAuth
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: 'Token authentication. Send `Authorization: Token <api-key>`. Keys are privileged
+    — server-to-server use only, never from client-side code.'
+  sources:
+  - openapi/soundstripe-openapi.yml
