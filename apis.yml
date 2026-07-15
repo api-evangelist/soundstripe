@@ -73,6 +73,8 @@ apis:
       - type: LlmsText
         url: https://docs.soundstripe.com/llms.txt
 common:
+  - type: AgenticAccess
+    url: agentic-access/soundstripe-agentic-access.yml
   - type: DomainSecurity
     url: security/soundstripe-domain-security.yml
   - type: Authentication
