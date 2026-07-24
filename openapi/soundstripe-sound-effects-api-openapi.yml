@@ -1,0 +1,78 @@
+openapi: 3.1.0
+info:
+  title: Soundstripe Categories Sound Effects API
+  version: '1'
+  description: Server-to-server REST API for the Soundstripe royalty-free music, sound-effects, and AI music supervisor catalog. Responses follow the JSON:API specification. Authentication is token-based via the `Authorization` header. The API rate limit is 25 requests per second per API key; exceeding it returns HTTP 429.
+  contact:
+    name: Soundstripe API
+    url: https://docs.soundstripe.com
+  license:
+    name: Soundstripe API Terms of Use
+    url: https://docs.soundstripe.com/docs/api-terms-of-use
+servers:
+- url: https://api.soundstripe.com
+  description: Production
+security:
+- TokenAuth: []
+tags:
+- name: Sound Effects
+  description: Sound-effect library and category browsing.
+paths:
+  /v1/sound_effects:
+    get:
+      operationId: listSoundEffects
+      summary: List Sound Effects
+      description: List sound effects with optional filtering by category and tags.
+      tags:
+      - Sound Effects
+      parameters:
+      - $ref: '#/components/parameters/PageNumber'
+      - $ref: '#/components/parameters/PageSize'
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+  /v1/sound_effects/{sound_effect_id}:
+    get:
+      operationId: retrieveSoundEffect
+      summary: Retrieve a Sound Effect
+      tags:
+      - Sound Effects
+      parameters:
+      - name: sound_effect_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+components:
+  parameters:
+    PageSize:
+      name: page[size]
+      in: query
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+    PageNumber:
+      name: page[number]
+      in: query
+      required: false
+      schema:
+        type: integer
+        minimum: 1
+  responses:
+    JsonApi:
+      description: JSON:API response.
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
+  securitySchemes:
+    TokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Token authentication. Send `Authorization: Token <api-key>`. Keys are privileged — server-to-server use only, never from client-side code.'

@@ -1,0 +1,143 @@
+openapi: 3.1.0
+info:
+  title: Soundstripe Categories Private Playlists API
+  version: '1'
+  description: Server-to-server REST API for the Soundstripe royalty-free music, sound-effects, and AI music supervisor catalog. Responses follow the JSON:API specification. Authentication is token-based via the `Authorization` header. The API rate limit is 25 requests per second per API key; exceeding it returns HTTP 429.
+  contact:
+    name: Soundstripe API
+    url: https://docs.soundstripe.com
+  license:
+    name: Soundstripe API Terms of Use
+    url: https://docs.soundstripe.com/docs/api-terms-of-use
+servers:
+- url: https://api.soundstripe.com
+  description: Production
+security:
+- TokenAuth: []
+tags:
+- name: Private Playlists
+  description: User-scoped playlists for organizing songs and sound effects.
+paths:
+  /v1/my_media/playlists:
+    get:
+      operationId: listPrivatePlaylists
+      summary: List Private Playlists
+      tags:
+      - Private Playlists
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+    post:
+      operationId: createPrivatePlaylist
+      summary: Create a Private Playlist
+      tags:
+      - Private Playlists
+      requestBody:
+        $ref: '#/components/requestBodies/JsonApi'
+      responses:
+        '201':
+          $ref: '#/components/responses/JsonApi'
+  /v1/my_media/playlists/{playlist_id}:
+    parameters:
+    - $ref: '#/components/parameters/PlaylistId'
+    get:
+      operationId: retrievePrivatePlaylist
+      summary: Retrieve a Private Playlist
+      tags:
+      - Private Playlists
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+    patch:
+      operationId: updatePrivatePlaylist
+      summary: Update a Private Playlist
+      tags:
+      - Private Playlists
+      requestBody:
+        $ref: '#/components/requestBodies/JsonApi'
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+    delete:
+      operationId: deletePrivatePlaylist
+      summary: Delete a Private Playlist
+      tags:
+      - Private Playlists
+      responses:
+        '204':
+          description: No Content
+  /v1/my_media/playlists/{playlist_id}/songs:
+    parameters:
+    - $ref: '#/components/parameters/PlaylistId'
+    post:
+      operationId: addSongsToPrivatePlaylist
+      summary: Add Songs to a Private Playlist
+      tags:
+      - Private Playlists
+      requestBody:
+        $ref: '#/components/requestBodies/JsonApi'
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+    delete:
+      operationId: removeSongsFromPrivatePlaylist
+      summary: Remove Songs From a Private Playlist
+      tags:
+      - Private Playlists
+      requestBody:
+        $ref: '#/components/requestBodies/JsonApi'
+      responses:
+        '204':
+          description: No Content
+  /v1/my_media/playlists/{playlist_id}/sound_effects:
+    parameters:
+    - $ref: '#/components/parameters/PlaylistId'
+    post:
+      operationId: addSoundEffectsToPrivatePlaylist
+      summary: Add Sound Effects to a Private Playlist
+      tags:
+      - Private Playlists
+      requestBody:
+        $ref: '#/components/requestBodies/JsonApi'
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+    delete:
+      operationId: removeSoundEffectsFromPrivatePlaylist
+      summary: Remove Sound Effects From a Private Playlist
+      tags:
+      - Private Playlists
+      requestBody:
+        $ref: '#/components/requestBodies/JsonApi'
+      responses:
+        '204':
+          description: No Content
+components:
+  parameters:
+    PlaylistId:
+      name: playlist_id
+      in: path
+      required: true
+      description: The playlist's ID.
+      schema:
+        type: string
+  responses:
+    JsonApi:
+      description: JSON:API response.
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
+  requestBodies:
+    JsonApi:
+      required: true
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
+  securitySchemes:
+    TokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Token authentication. Send `Authorization: Token <api-key>`. Keys are privileged — server-to-server use only, never from client-side code.'

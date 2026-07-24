@@ -1,0 +1,68 @@
+openapi: 3.1.0
+info:
+  title: Soundstripe Categories Supe Search API
+  version: '1'
+  description: Server-to-server REST API for the Soundstripe royalty-free music, sound-effects, and AI music supervisor catalog. Responses follow the JSON:API specification. Authentication is token-based via the `Authorization` header. The API rate limit is 25 requests per second per API key; exceeding it returns HTTP 429.
+  contact:
+    name: Soundstripe API
+    url: https://docs.soundstripe.com
+  license:
+    name: Soundstripe API Terms of Use
+    url: https://docs.soundstripe.com/docs/api-terms-of-use
+servers:
+- url: https://api.soundstripe.com
+  description: Production
+security:
+- TokenAuth: []
+tags:
+- name: Supe Search
+  description: Asynchronous AI music supervisor for natural-language and image-based catalog matching.
+paths:
+  /v1/supe/search:
+    post:
+      operationId: createSearch
+      summary: Create a Search
+      description: Create a Supe AI music supervisor search. Accepts a natural-language `query`, a `context` describing the scene, and/or up to 11 `asset_ids` (10 images + 1 video). At least one of `query`, `context`, or `asset_ids` is required. `callback_url` (HTTPS) is required for asynchronous delivery. Returns 200 immediately when an equivalent search is cached within 24 hours, otherwise 202 with a search ID; final results arrive via the configured webhook.
+      tags:
+      - Supe Search
+      requestBody:
+        required: true
+        content:
+          application/vnd.api+json:
+            schema:
+              type: object
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+        '202':
+          $ref: '#/components/responses/JsonApi'
+  /v1/supe/search/{search_id}:
+    get:
+      operationId: retrieveSearch
+      summary: Retrieve a Search
+      description: Retrieve the current status and results of a Supe search; refreshes signed audio URLs (which expire seven days after generation).
+      tags:
+      - Supe Search
+      parameters:
+      - name: search_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/JsonApi'
+components:
+  responses:
+    JsonApi:
+      description: JSON:API response.
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
+  securitySchemes:
+    TokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'Token authentication. Send `Authorization: Token <api-key>`. Keys are privileged — server-to-server use only, never from client-side code.'
