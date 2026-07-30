@@ -19,7 +19,20 @@ description: >-
   Native integrations exist for Adobe Premiere Pro, Adobe Express, and
   Twitch; partner programs cover API embedding, music resale, and custom
   licensing for tool makers and platforms.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/soundstripe.png
 tags:
   - Music
   - Sound Effects
@@ -37,41 +50,160 @@ created: '2026-05-25'
 modified: '2026-05-25'
 specificationVersion: '0.20'
 apis:
-  - aid: soundstripe:api
-    name: Soundstripe API
-    description: >-
-      Server-to-server REST API for embedding the Soundstripe catalog into
-      creator tools, editing suites, and platforms. JSON:API responses, token
-      authentication via the Authorization header, and 25 requests per second.
-      Endpoints cover song retrieval, sound-effect listing, categories,
-      curated playlists, private (user-scoped) playlist management, and the
-      Supe AI search workflow (asset upload, natural-language search, signed
-      webhook delivery of matched songs with audio files and artists).
-    humanURL: https://docs.soundstripe.com
-    baseURL: https://api.soundstripe.com
-    version: v1
-    tags:
-      - Music
-      - Sound Effects
-      - Playlists
-      - Search
-      - AI Music Supervisor
-      - Webhooks
-    properties:
-      - type: Documentation
-        url: https://docs.soundstripe.com
-      - type: Authentication
-        url: https://docs.soundstripe.com/reference/authentication
-      - type: RateLimits
-        url: https://docs.soundstripe.com/reference/rate-limits
-      - type: Webhooks
-        url: https://docs.soundstripe.com/reference/webhooks
-      - type: TermsOfService
-        url: https://docs.soundstripe.com/docs/api-terms-of-use
-      - type: OpenAPI
-        url: openapi/soundstripe-openapi.yml
-      - type: LlmsText
-        url: https://docs.soundstripe.com/llms.txt
+- aid: soundstripe:soundstripe-categories-api
+  name: Soundstripe Categories API
+  description: Tagging and category metadata for songs and SFX.
+  humanURL: https://docs.soundstripe.com
+  baseURL: https://api.soundstripe.com
+  tags:
+  - Categories
+  properties:
+  - type: OpenAPI
+    url: openapi/soundstripe-categories-api-openapi.yml
+  - type: Documentation
+    url: https://docs.soundstripe.com
+  - type: Authentication
+    url: https://docs.soundstripe.com/reference/authentication
+  - type: RateLimits
+    url: https://docs.soundstripe.com/reference/rate-limits
+  - type: Webhooks
+    url: https://docs.soundstripe.com/reference/webhooks
+  - type: TermsOfService
+    url: https://docs.soundstripe.com/docs/api-terms-of-use
+  - type: LlmsText
+    url: https://docs.soundstripe.com/llms.txt
+- aid: soundstripe:soundstripe-playlists-api
+  name: Soundstripe Playlists API
+  description: Soundstripe-curated playlists and their categories.
+  humanURL: https://docs.soundstripe.com
+  baseURL: https://api.soundstripe.com
+  tags:
+  - Playlists
+  properties:
+  - type: OpenAPI
+    url: openapi/soundstripe-playlists-api-openapi.yml
+  - type: Documentation
+    url: https://docs.soundstripe.com
+  - type: Authentication
+    url: https://docs.soundstripe.com/reference/authentication
+  - type: RateLimits
+    url: https://docs.soundstripe.com/reference/rate-limits
+  - type: Webhooks
+    url: https://docs.soundstripe.com/reference/webhooks
+  - type: TermsOfService
+    url: https://docs.soundstripe.com/docs/api-terms-of-use
+  - type: LlmsText
+    url: https://docs.soundstripe.com/llms.txt
+- aid: soundstripe:soundstripe-private-playlists-api
+  name: Soundstripe Private Playlists API
+  description: User-scoped playlists for organizing songs and sound effects.
+  humanURL: https://docs.soundstripe.com
+  baseURL: https://api.soundstripe.com
+  tags:
+  - Private Playlists
+  properties:
+  - type: OpenAPI
+    url: openapi/soundstripe-private-playlists-api-openapi.yml
+  - type: Documentation
+    url: https://docs.soundstripe.com
+  - type: Authentication
+    url: https://docs.soundstripe.com/reference/authentication
+  - type: RateLimits
+    url: https://docs.soundstripe.com/reference/rate-limits
+  - type: Webhooks
+    url: https://docs.soundstripe.com/reference/webhooks
+  - type: TermsOfService
+    url: https://docs.soundstripe.com/docs/api-terms-of-use
+  - type: LlmsText
+    url: https://docs.soundstripe.com/llms.txt
+- aid: soundstripe:soundstripe-songs-api
+  name: Soundstripe Songs API
+  description: Catalog song retrieval with artists and audio files.
+  humanURL: https://docs.soundstripe.com
+  baseURL: https://api.soundstripe.com
+  tags:
+  - Songs
+  properties:
+  - type: OpenAPI
+    url: openapi/soundstripe-songs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.soundstripe.com
+  - type: Authentication
+    url: https://docs.soundstripe.com/reference/authentication
+  - type: RateLimits
+    url: https://docs.soundstripe.com/reference/rate-limits
+  - type: Webhooks
+    url: https://docs.soundstripe.com/reference/webhooks
+  - type: TermsOfService
+    url: https://docs.soundstripe.com/docs/api-terms-of-use
+  - type: LlmsText
+    url: https://docs.soundstripe.com/llms.txt
+- aid: soundstripe:soundstripe-sound-effects-api
+  name: Soundstripe Sound Effects API
+  description: Sound-effect library and category browsing.
+  humanURL: https://docs.soundstripe.com
+  baseURL: https://api.soundstripe.com
+  tags:
+  - Sound Effects
+  properties:
+  - type: OpenAPI
+    url: openapi/soundstripe-sound-effects-api-openapi.yml
+  - type: Documentation
+    url: https://docs.soundstripe.com
+  - type: Authentication
+    url: https://docs.soundstripe.com/reference/authentication
+  - type: RateLimits
+    url: https://docs.soundstripe.com/reference/rate-limits
+  - type: Webhooks
+    url: https://docs.soundstripe.com/reference/webhooks
+  - type: TermsOfService
+    url: https://docs.soundstripe.com/docs/api-terms-of-use
+  - type: LlmsText
+    url: https://docs.soundstripe.com/llms.txt
+- aid: soundstripe:soundstripe-supe-assets-api
+  name: Soundstripe Supe Assets API
+  description: Reference image and video uploads consumed by Supe Search.
+  humanURL: https://docs.soundstripe.com
+  baseURL: https://api.soundstripe.com
+  tags:
+  - Supe Assets
+  properties:
+  - type: OpenAPI
+    url: openapi/soundstripe-supe-assets-api-openapi.yml
+  - type: Documentation
+    url: https://docs.soundstripe.com
+  - type: Authentication
+    url: https://docs.soundstripe.com/reference/authentication
+  - type: RateLimits
+    url: https://docs.soundstripe.com/reference/rate-limits
+  - type: Webhooks
+    url: https://docs.soundstripe.com/reference/webhooks
+  - type: TermsOfService
+    url: https://docs.soundstripe.com/docs/api-terms-of-use
+  - type: LlmsText
+    url: https://docs.soundstripe.com/llms.txt
+- aid: soundstripe:soundstripe-supe-search-api
+  name: Soundstripe Supe Search API
+  description: Asynchronous AI music supervisor for natural-language and image-based catalog matching.
+  humanURL: https://docs.soundstripe.com
+  baseURL: https://api.soundstripe.com
+  tags:
+  - Supe Search
+  properties:
+  - type: OpenAPI
+    url: openapi/soundstripe-supe-search-api-openapi.yml
+  - type: Documentation
+    url: https://docs.soundstripe.com
+  - type: Authentication
+    url: https://docs.soundstripe.com/reference/authentication
+  - type: RateLimits
+    url: https://docs.soundstripe.com/reference/rate-limits
+  - type: Webhooks
+    url: https://docs.soundstripe.com/reference/webhooks
+  - type: TermsOfService
+    url: https://docs.soundstripe.com/docs/api-terms-of-use
+  - type: LlmsText
+    url: https://docs.soundstripe.com/llms.txt
 common:
   - type: AgenticAccess
     url: agentic-access/soundstripe-agentic-access.yml
