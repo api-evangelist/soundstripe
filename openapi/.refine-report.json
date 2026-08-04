@@ -1,0 +1,26 @@
+{
+  "provider": "soundstripe",
+  "sources": [
+    "soundstripe-categories-api-openapi.yml",
+    "soundstripe-playlists-api-openapi.yml",
+    "soundstripe-private-playlists-api-openapi.yml",
+    "soundstripe-songs-api-openapi.yml",
+    "soundstripe-sound-effects-api-openapi.yml",
+    "soundstripe-supe-assets-api-openapi.yml",
+    "soundstripe-supe-search-api-openapi.yml"
+  ],
+  "outputs": [
+    "soundstripe-categories-api-openapi.yml",
+    "soundstripe-playlists-api-openapi.yml",
+    "soundstripe-private-playlists-api-openapi.yml",
+    "soundstripe-songs-api-openapi.yml",
+    "soundstripe-sound-effects-api-openapi.yml",
+    "soundstripe-supe-assets-api-openapi.yml",
+    "soundstripe-supe-search-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
