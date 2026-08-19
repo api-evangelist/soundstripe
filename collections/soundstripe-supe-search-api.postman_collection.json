@@ -1,0 +1,305 @@
+{
+  "item": [
+    {
+      "id": "907cf155-79b3-43df-a5e2-31b8ace503c6",
+      "name": "Supe Search",
+      "description": {
+        "content": "Asynchronous AI music supervisor for natural-language and image-based catalog matching.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "be349a3b-8257-4efa-a1e1-a73839164c1f",
+          "name": "Create a Search",
+          "request": {
+            "name": "Create a Search",
+            "description": {
+              "content": "Create a Supe AI music supervisor search. Accepts a natural-language `query`, a `context` describing the scene, and/or up to 11 `asset_ids` (10 images + 1 video). At least one of `query`, `context`, or `asset_ids` is required. `callback_url` (HTTPS) is required for asynchronous delivery. Returns 200 immediately when an equivalent search is cached within 24 hours, otherwise 202 with a search ID; final results arrive via the configured webhook.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "supe",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/vnd.api+json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "85f6fdb5-6652-406f-94b3-1d0b0740ddb3",
+              "name": "JSON:API response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "supe",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d6825c49-1ed8-48c4-bf89-03cb13294c69",
+              "name": "JSON:API response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "supe",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "513ffa42-e53a-47ee-8000-474edabb0571",
+          "name": "Retrieve a Search",
+          "request": {
+            "name": "Retrieve a Search",
+            "description": {
+              "content": "Retrieve the current status and results of a Supe search; refreshes signed audio URLs (which expire seven days after generation).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "supe",
+                "search",
+                ":search_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "search_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b66aa5c1-dae9-4383-970d-2dd7235ba31b",
+              "name": "JSON:API response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "supe",
+                    "search",
+                    ":search_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "search_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.soundstripe.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d127664f-d27f-4c52-9adc-f58572c7f1ef",
+    "name": "Soundstripe Categories Supe Search API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Server-to-server REST API for the Soundstripe royalty-free music, sound-effects, and AI music supervisor catalog. Responses follow the JSON:API specification. Authentication is token-based via the `Authorization` header. The API rate limit is 25 requests per second per API key; exceeding it returns HTTP 429.\n\nContact Support:\n Name: Soundstripe API",
+      "type": "text/plain"
+    }
+  }
+}

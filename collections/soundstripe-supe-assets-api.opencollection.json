@@ -1,0 +1,70 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Soundstripe Categories Supe Assets API",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Supe Assets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upload an Asset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.soundstripe.com/v1/supe/assets",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "content_type",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Upload a single reference image or video to be referenced by a later Supe search. Multipart form-data with a required `file` field and optional `content_type` override. Image: JPEG/PNG/WebP, max 20 MB, max 4096 px per axis. Video: MP4/QuickTime/WebM, max 500 MB, max 10 minutes. Processing is asynchronous; the response is 202 with a `pending` asset."
+        },
+        {
+          "info": {
+            "name": "Retrieve an Asset",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.soundstripe.com/v1/supe/assets/:asset_id",
+            "params": [
+              {
+                "name": "asset_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the processing state of a previously uploaded asset. Assets are scoped to the requesting API key; references from other keys look like 404."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

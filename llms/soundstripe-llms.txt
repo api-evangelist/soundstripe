@@ -1,0 +1,32 @@
+# Soundstripe Documentation
+
+> Explore our helpful guides and API Reference to learn how to integrate Soundstripe's content into your platform.
+
+## Guides
+- [Preventing Copyright Claims for Songs Used in YouTube Videos](https://docs.soundstripe.com/docs/clearing-youtube-claims-with-code.md): Learn how to prevent copyright claims on YouTube Videos.
+
+## API Reference
+- [Rate limits](https://docs.soundstripe.com/reference/rate-limits.md): Learn about the API rate limits and how to work with them.
+- [Retrieve a song](https://docs.soundstripe.com/reference/retrieve-a-song.md)
+- [Retrieve a sound effect](https://docs.soundstripe.com/reference/retrieve-a-sound-effect.md)
+- [List sound effects](https://docs.soundstripe.com/reference/list-sound-effects.md)
+- [List categories](https://docs.soundstripe.com/reference/list-categories.md)
+- [Retrieve a playlist](https://docs.soundstripe.com/reference/retrieve-a-playlist.md)
+- [List playlists](https://docs.soundstripe.com/reference/list-playlists.md)
+- [List playlist categories](https://docs.soundstripe.com/reference/list-playlist-categories.md)
+- [The private playlist object](https://docs.soundstripe.com/reference/the-private-playlist-object.md)
+- [Retrieve a private playlist](https://docs.soundstripe.com/reference/retrieve-a-private-playlist.md)
+- [List private playlists](https://docs.soundstripe.com/reference/list-private-playlists.md)
+- [Create a private playlist](https://docs.soundstripe.com/reference/create-a-private-playlist.md)
+- [Update a private playlist](https://docs.soundstripe.com/reference/update-a-private-playlist.md)
+- [Delete a private playlist](https://docs.soundstripe.com/reference/delete-a-private-playlist.md)
+- [Add song(s) to a private playlist](https://docs.soundstripe.com/reference/add-songs-to-private-playlist.md)
+- [Add sound effect(s) to a private playlist](https://docs.soundstripe.com/reference/add-sound-effects-to-private-playlist.md)
+- [Remove song(s) from a private playlist](https://docs.soundstripe.com/reference/remove-songs-from-private-playlist.md)
+- [Remove sound effect(s) from a private playlist](https://docs.soundstripe.com/reference/remove-sound-effects-from-private-playlist.md)
+- [Supe Search](https://docs.soundstripe.com/reference/supe-search.md): Search Soundstripe's music catalog using natural language, project context, and reference imagery.
+- [Create a search](https://docs.soundstripe.com/reference/create-a-search.md)
+- [Retrieve a search](https://docs.soundstripe.com/reference/retrieve-a-search.md)
+- [Upload an asset](https://docs.soundstripe.com/reference/upload-an-asset.md): Upload a single image or video that can be referenced from a later search. Processing is asynchronous; the response is 202 and the asset's lifecycle (`pending` → `processing` → `processed`, or a terminal failure) is then driven by Soundstripe.
+- [Retrieve an asset](https://docs.soundstripe.com/reference/retrieve-an-asset.md): Retrieve the processing state of a previously uploaded asset. Assets are scoped to the requesting API key; references from other keys look like 404.
+- [Webhooks](https://docs.soundstripe.com/reference/webhooks.md): Receive search results via signed webhook delivery.

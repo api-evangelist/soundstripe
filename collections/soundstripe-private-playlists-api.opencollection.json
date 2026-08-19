@@ -1,0 +1,205 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Soundstripe Categories Private Playlists API",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Private Playlists",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Private Playlists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.soundstripe.com/v1/my_media/playlists"
+          },
+          "docs": "List Private Playlists"
+        },
+        {
+          "info": {
+            "name": "Create a Private Playlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.soundstripe.com/v1/my_media/playlists",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a Private Playlist"
+        },
+        {
+          "info": {
+            "name": "Retrieve a Private Playlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.soundstripe.com/v1/my_media/playlists/:playlist_id",
+            "params": [
+              {
+                "name": "playlist_id",
+                "value": "",
+                "type": "path",
+                "description": "The playlist's ID."
+              }
+            ]
+          },
+          "docs": "Retrieve a Private Playlist"
+        },
+        {
+          "info": {
+            "name": "Update a Private Playlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.soundstripe.com/v1/my_media/playlists/:playlist_id",
+            "params": [
+              {
+                "name": "playlist_id",
+                "value": "",
+                "type": "path",
+                "description": "The playlist's ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a Private Playlist"
+        },
+        {
+          "info": {
+            "name": "Delete a Private Playlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.soundstripe.com/v1/my_media/playlists/:playlist_id",
+            "params": [
+              {
+                "name": "playlist_id",
+                "value": "",
+                "type": "path",
+                "description": "The playlist's ID."
+              }
+            ]
+          },
+          "docs": "Delete a Private Playlist"
+        },
+        {
+          "info": {
+            "name": "Add Songs to a Private Playlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.soundstripe.com/v1/my_media/playlists/:playlist_id/songs",
+            "params": [
+              {
+                "name": "playlist_id",
+                "value": "",
+                "type": "path",
+                "description": "The playlist's ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add Songs to a Private Playlist"
+        },
+        {
+          "info": {
+            "name": "Remove Songs From a Private Playlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.soundstripe.com/v1/my_media/playlists/:playlist_id/songs",
+            "params": [
+              {
+                "name": "playlist_id",
+                "value": "",
+                "type": "path",
+                "description": "The playlist's ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Remove Songs From a Private Playlist"
+        },
+        {
+          "info": {
+            "name": "Add Sound Effects to a Private Playlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.soundstripe.com/v1/my_media/playlists/:playlist_id/sound_effects",
+            "params": [
+              {
+                "name": "playlist_id",
+                "value": "",
+                "type": "path",
+                "description": "The playlist's ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add Sound Effects to a Private Playlist"
+        },
+        {
+          "info": {
+            "name": "Remove Sound Effects From a Private Playlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.soundstripe.com/v1/my_media/playlists/:playlist_id/sound_effects",
+            "params": [
+              {
+                "name": "playlist_id",
+                "value": "",
+                "type": "path",
+                "description": "The playlist's ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Remove Sound Effects From a Private Playlist"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

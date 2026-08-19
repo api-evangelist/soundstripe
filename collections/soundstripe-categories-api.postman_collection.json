@@ -1,0 +1,129 @@
+{
+  "item": [
+    {
+      "id": "f304e707-f852-46c3-adbe-0061510ffc9d",
+      "name": "Categories",
+      "description": {
+        "content": "Tagging and category metadata for songs and SFX.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "422f09ec-a1cb-41c7-ae86-d7e973c755c6",
+          "name": "List Categories",
+          "request": {
+            "name": "List Categories",
+            "description": {
+              "content": "List sound-effect categories.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "categories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1c5603a4-03ed-4fc6-9119-4b5293ec09a8",
+              "name": "JSON:API response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.soundstripe.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b55fd32d-616b-4c75-9e9a-397061d25be7",
+    "name": "Soundstripe Categories API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Server-to-server REST API for the Soundstripe royalty-free music, sound-effects, and AI music supervisor catalog. Responses follow the JSON:API specification. Authentication is token-based via the `Authorization` header. The API rate limit is 25 requests per second per API key; exceeding it returns HTTP 429.\n\nContact Support:\n Name: Soundstripe API",
+      "type": "text/plain"
+    }
+  }
+}

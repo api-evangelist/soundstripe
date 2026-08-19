@@ -1,0 +1,324 @@
+{
+  "item": [
+    {
+      "id": "f682b750-8820-4cf8-8ff4-3dc70412b868",
+      "name": "Playlists",
+      "description": {
+        "content": "Soundstripe-curated playlists and their categories.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c570a0c9-6e71-4330-a139-45b0723852e2",
+          "name": "List Playlist Categories",
+          "request": {
+            "name": "List Playlist Categories",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "playlist_categories"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "00eb90b7-83e0-4d81-9558-1ae6c4f4e682",
+              "name": "JSON:API response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "playlist_categories"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3283cb98-c1c6-40f1-a798-c1934fce5297",
+          "name": "List Playlists",
+          "request": {
+            "name": "List Playlists",
+            "description": {
+              "content": "List Soundstripe-curated playlists.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "playlists"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page[number]",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page[size]",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c4977326-ff8c-47d4-9807-f1b6240ef0f0",
+              "name": "JSON:API response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "playlists"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page[number]",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page[size]",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3ca48294-675a-45d3-beba-5f1a6ec3c050",
+          "name": "Retrieve a Playlist",
+          "request": {
+            "name": "Retrieve a Playlist",
+            "description": {
+              "content": "Retrieve a curated playlist, optionally including its songs and audio files via the `include` parameter.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "playlists",
+                ":playlist_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "playlist_id",
+                  "description": "(Required) The playlist's ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f8e6f807-00c7-4770-9b81-714776fad939",
+              "name": "JSON:API response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "playlists",
+                    ":playlist_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "playlist_id",
+                      "description": "(Required) The playlist's ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.soundstripe.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bb7fc915-5bb0-4c7b-b90c-e070c478139f",
+    "name": "Soundstripe Categories Playlists API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Server-to-server REST API for the Soundstripe royalty-free music, sound-effects, and AI music supervisor catalog. Responses follow the JSON:API specification. Authentication is token-based via the `Authorization` header. The API rate limit is 25 requests per second per API key; exceeding it returns HTTP 429.\n\nContact Support:\n Name: Soundstripe API",
+      "type": "text/plain"
+    }
+  }
+}

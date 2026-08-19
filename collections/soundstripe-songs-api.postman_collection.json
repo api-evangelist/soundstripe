@@ -1,0 +1,147 @@
+{
+  "item": [
+    {
+      "id": "89fe7883-937f-4343-be77-31fe0eb6ea5a",
+      "name": "Songs",
+      "description": {
+        "content": "Catalog song retrieval with artists and audio files.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "32b041df-4621-484b-b4ef-7f5359e663d6",
+          "name": "Retrieve a Song",
+          "request": {
+            "name": "Retrieve a Song",
+            "description": {
+              "content": "Retrieve a song with its primary artist and primary audio file relationships.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "songs",
+                ":song_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "song_id",
+                  "description": "(Required) The song's ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f65abc42-7d5c-4bf8-9475-07177b70e45a",
+              "name": "JSON:API response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "songs",
+                    ":song_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "song_id",
+                      "description": "(Required) The song's ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.api+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.soundstripe.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "de9b7118-e268-4cdc-8371-84ed37fac165",
+    "name": "Soundstripe Categories Songs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Server-to-server REST API for the Soundstripe royalty-free music, sound-effects, and AI music supervisor catalog. Responses follow the JSON:API specification. Authentication is token-based via the `Authorization` header. The API rate limit is 25 requests per second per API key; exceeding it returns HTTP 429.\n\nContact Support:\n Name: Soundstripe API",
+      "type": "text/plain"
+    }
+  }
+}

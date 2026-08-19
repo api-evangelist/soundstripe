@@ -1,0 +1,79 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Soundstripe Categories Playlists API",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Playlists",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Playlist Categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.soundstripe.com/v1/playlist_categories"
+          },
+          "docs": "List Playlist Categories"
+        },
+        {
+          "info": {
+            "name": "List Playlists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.soundstripe.com/v1/playlists",
+            "params": [
+              {
+                "name": "page[number]",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page[size]",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Soundstripe-curated playlists."
+        },
+        {
+          "info": {
+            "name": "Retrieve a Playlist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.soundstripe.com/v1/playlists/:playlist_id",
+            "params": [
+              {
+                "name": "playlist_id",
+                "value": "",
+                "type": "path",
+                "description": "The playlist's ID."
+              }
+            ]
+          },
+          "docs": "Retrieve a curated playlist, optionally including its songs and audio files via the `include` parameter."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

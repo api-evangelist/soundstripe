@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Soundstripe Categories Supe Search API",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Supe Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a Search",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.soundstripe.com/v1/supe/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a Supe AI music supervisor search. Accepts a natural-language `query`, a `context` describing the scene, and/or up to 11 `asset_ids` (10 images + 1 video). At least one of `query`, `context`, or `asset_ids` is required. `callback_url` (HTTPS) is required for asynchronous delivery. Returns 200 immediately when an equivalent search is cached within 24 hours, otherwise 202 with a search ID; final results arrive via the configured webhook."
+        },
+        {
+          "info": {
+            "name": "Retrieve a Search",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.soundstripe.com/v1/supe/search/:search_id",
+            "params": [
+              {
+                "name": "search_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the current status and results of a Supe search; refreshes signed audio URLs (which expire seven days after generation)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
