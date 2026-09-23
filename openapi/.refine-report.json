@@ -1,13 +1,7 @@
 {
   "provider": "soundstripe",
   "sources": [
-    "soundstripe-categories-api-openapi.yml",
-    "soundstripe-playlists-api-openapi.yml",
-    "soundstripe-private-playlists-api-openapi.yml",
-    "soundstripe-songs-api-openapi.yml",
-    "soundstripe-sound-effects-api-openapi.yml",
-    "soundstripe-supe-assets-api-openapi.yml",
-    "soundstripe-supe-search-api-openapi.yml"
+    "_original/soundstripe-openapi.yml"
   ],
   "outputs": [
     "soundstripe-categories-api-openapi.yml",
@@ -21,6 +15,18 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "soundstripe-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "soundstripe-categories-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "soundstripe-playlists-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "soundstripe-private-playlists-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "soundstripe-songs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "soundstripe-sound-effects-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "soundstripe-supe-assets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "soundstripe-supe-search-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
