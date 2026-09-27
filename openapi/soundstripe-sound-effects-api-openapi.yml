@@ -47,6 +47,13 @@ paths:
         '200':
           $ref: '#/components/responses/JsonApi'
 components:
+  responses:
+    JsonApi:
+      description: JSON:API response.
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
   parameters:
     PageNumber:
       name: page[number]
@@ -63,13 +70,6 @@ components:
         type: integer
         minimum: 1
         maximum: 100
-  responses:
-    JsonApi:
-      description: JSON:API response.
-      content:
-        application/vnd.api+json:
-          schema:
-            type: object
   securitySchemes:
     TokenAuth:
       type: apiKey
