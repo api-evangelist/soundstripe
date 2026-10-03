@@ -55,13 +55,6 @@ components:
           schema:
             type: object
   parameters:
-    PageNumber:
-      name: page[number]
-      in: query
-      required: false
-      schema:
-        type: integer
-        minimum: 1
     PageSize:
       name: page[size]
       in: query
@@ -70,6 +63,13 @@ components:
         type: integer
         minimum: 1
         maximum: 100
+    PageNumber:
+      name: page[number]
+      in: query
+      required: false
+      schema:
+        type: integer
+        minimum: 1
   securitySchemes:
     TokenAuth:
       type: apiKey

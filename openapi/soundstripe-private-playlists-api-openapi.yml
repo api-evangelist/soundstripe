@@ -113,6 +113,20 @@ paths:
         '204':
           description: No Content
 components:
+  requestBodies:
+    JsonApi:
+      required: true
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
+  responses:
+    JsonApi:
+      description: JSON:API response.
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
   parameters:
     PlaylistId:
       name: playlist_id
@@ -121,20 +135,6 @@ components:
       description: The playlist's ID.
       schema:
         type: string
-  responses:
-    JsonApi:
-      description: JSON:API response.
-      content:
-        application/vnd.api+json:
-          schema:
-            type: object
-  requestBodies:
-    JsonApi:
-      required: true
-      content:
-        application/vnd.api+json:
-          schema:
-            type: object
   securitySchemes:
     TokenAuth:
       type: apiKey
