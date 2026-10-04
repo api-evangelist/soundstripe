@@ -1,36 +1,34 @@
-# Kin Score artifact — soundstripe — 2026-08-25T125852
+# Kin Score artifact — soundstripe — 2026-09-24T090406
 # The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
 ---
 kin_score:
   slug: soundstripe
-  schema_version: 0.14.0
-  scored_at: '2026-08-25'
-  run_ts: 2026-08-25T125852
-  composite: 38.9
-  band: thin
+  schema_version: 0.22.0
+  scored_at: '2026-09-24'
+  run_ts: 2026-09-24T090406
+  composite: 40.4
+  band: developing
   facets:
-    discoverability: 81.5
-    contract_quality: 56.1
-    governance: 0.0
-    operational_transparency: 21.1
-    developer_ergonomics: 13.1
-    commercial_clarity: 56.6
+    discoverability: 75.9
+    contract_quality: 55.3
     contract_governance: 0.0
-    access_clarity: 56.6
+    operational_transparency: 28.9
+    developer_ergonomics: 17.9
+    access_clarity: 61.8
   agent_readiness:
-    score: 19.8
-    band: agent-aware
+    score: 32.7
+    band: agent-ready
     dimensions:
       spec_presence: true
       agentic_access: derived
       reversibility_documented: false
-      mcp_server: false
+      mcp_server: verified
       auth_clarity: bearer
       idempotency: false
       error_semantics: false
       openapi_examples: false
       rate_limit_signal: documented
-      event_surface_described: false
+      event_surface_described: true
       agent_skills: false
       well_known_catalog: false
       consent_identity: false
@@ -41,6 +39,7 @@ kin_score:
       dynamic_client_registration: false
       agentic_commerce: false
   provenance:
+    mcp: first-party
     agentic_access: derived
     contracts:
       total: 7
