@@ -47,13 +47,6 @@ paths:
         '200':
           $ref: '#/components/responses/JsonApi'
 components:
-  responses:
-    JsonApi:
-      description: JSON:API response.
-      content:
-        application/vnd.api+json:
-          schema:
-            type: object
   parameters:
     PageSize:
       name: page[size]
@@ -70,6 +63,13 @@ components:
       schema:
         type: integer
         minimum: 1
+  responses:
+    JsonApi:
+      description: JSON:API response.
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
   securitySchemes:
     TokenAuth:
       type: apiKey

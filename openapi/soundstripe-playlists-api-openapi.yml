@@ -53,13 +53,6 @@ paths:
         '200':
           $ref: '#/components/responses/JsonApi'
 components:
-  responses:
-    JsonApi:
-      description: JSON:API response.
-      content:
-        application/vnd.api+json:
-          schema:
-            type: object
   parameters:
     PageSize:
       name: page[size]
@@ -69,13 +62,6 @@ components:
         type: integer
         minimum: 1
         maximum: 100
-    PlaylistId:
-      name: playlist_id
-      in: path
-      required: true
-      description: The playlist's ID.
-      schema:
-        type: string
     PageNumber:
       name: page[number]
       in: query
@@ -83,6 +69,20 @@ components:
       schema:
         type: integer
         minimum: 1
+    PlaylistId:
+      name: playlist_id
+      in: path
+      required: true
+      description: The playlist's ID.
+      schema:
+        type: string
+  responses:
+    JsonApi:
+      description: JSON:API response.
+      content:
+        application/vnd.api+json:
+          schema:
+            type: object
   securitySchemes:
     TokenAuth:
       type: apiKey
