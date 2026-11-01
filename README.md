@@ -1,4 +1,4 @@
-# Soundstripe (soundstripe)
+# Soundstripe
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,83 +66,135 @@
 
 Soundstripe is a Nashville-based subscription platform that licenses royalty-free music, sound effects, and stock video to creators, agencies, podcasters, filmmakers, and enterprises. The catalog spans roughly 120,000 human-made tracks from Grammy-winning and independent artists, nearly 100,000 sound effects, and 100,000+ stock video clips (HD through 8K) — all pre-cleared under a single digital license that covers YouTube, Instagram, TikTok, podcasting, and commercial use, with stems and cut-downs available for many songs. Soundstripe also publishes a server-to-server REST API at api.soundstripe.com (JSON:API, token auth, 25 req/sec, signed webhooks) that exposes songs, sound effects, playlists, private playlists, and "Supe" — an AI music supervisor that matches catalog tracks to natural-language briefs, scene context, and reference imagery via asynchronous search and asset upload endpoints. Native integrations exist for Adobe Premiere Pro, Adobe Express, and Twitch; partner programs cover API embedding, music resale, and custom licensing for tool makers and platforms.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/soundstripe/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/soundstripe/refs/heads/main/apis.yml)
+**Areas:** Music · Sound Effects · Stock Video · Royalty-Free · Licensing · Subscription · Creators · Content Creation · Video Production · Podcasts · AI Music Supervisor · Stems
 
-## Tags
+## Soundstripe on APIs.io
 
-- Music
-- Sound Effects
-- Stock Video
-- Royalty Free
-- Licensing
-- Subscription
-- Creators
-- Content Creation
-- Video Production
-- Podcasting
-- AI Music Supervisor
-- Stems
+Everything profiled for Soundstripe is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/soundstripe/](https://apis.io/providers/soundstripe/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (7)
 
-- **Created:** 2026-05-25
-- **Modified:** 2026-05-25
+- [Soundstripe Categories API](https://apis.io/apis/soundstripe/soundstripe-categories-api/) — Tagging and category metadata for songs and SFX.
+- [Soundstripe Playlists API](https://apis.io/apis/soundstripe/soundstripe-playlists-api/) — Soundstripe-curated playlists and their categories.
+- [Soundstripe Private Playlists API](https://apis.io/apis/soundstripe/soundstripe-private-playlists-api/) — User-scoped playlists for organizing songs and sound effects.
+- [Soundstripe Songs API](https://apis.io/apis/soundstripe/soundstripe-songs-api/) — Catalog song retrieval with artists and audio files.
+- [Soundstripe Sound Effects API](https://apis.io/apis/soundstripe/soundstripe-sound-effects-api/) — Sound-effect library and category browsing.
+- [Soundstripe Supe Assets API](https://apis.io/apis/soundstripe/soundstripe-supe-assets-api/) — Reference image and video uploads consumed by Supe Search.
+- [Soundstripe Supe Search API](https://apis.io/apis/soundstripe/soundstripe-supe-search-api/) — Asynchronous AI music supervisor for natural-language and image-based catalog matching.
 
-## APIs
+### Published properties
 
-### Soundstripe API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Server-to-server REST API for embedding the Soundstripe catalog into creator tools, editing suites, and platforms. JSON:API responses, token authentication via the Authorization header, and 25 requests per second. Endpoints cover song retrieval, sound-effect listing, categories, curated playlists, private (user-scoped) playlist management, and the Supe AI search workflow (asset upload, natural-language search, signed webhook delivery of matched songs with audio files and artists).
+#### MCP servers (1)
 
-- **Human URL:** [https://docs.soundstripe.com](https://docs.soundstripe.com)
-- **Base URL:** `https://api.soundstripe.com`
+Model Context Protocol servers that expose the API to agents.
 
-#### Tags
+- [soundstripe](https://apis.io/servers/soundstripe/soundstripe/)
 
-- Music
-- Sound Effects
-- Playlists
-- Search
-- AI Music Supervisor
-- Webhooks
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://docs.soundstripe.com)
-- [Authentication](https://docs.soundstripe.com/reference/authentication)
-- [Rate Limits](https://docs.soundstripe.com/reference/rate-limits)
-- [Webhooks](https://docs.soundstripe.com/reference/webhooks)
-- [Terms of Service](https://docs.soundstripe.com/docs/api-terms-of-use)
-- [OpenAPI](openapi/soundstripe-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/soundstripe.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/soundstripe.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [L L Ms Txt](https://docs.soundstripe.com/llms.txt)
+- [Soundstripe Agentic Access](https://apis.io/agentic-access/soundstripe/soundstripe-agentic-access/)
 
-## Common Properties
+#### Collections (8)
+
+Postman and Open Collection request collections.
+
+- [Soundstripe API](https://apis.io/collections/soundstripe/open-soundstripe/)
+- [Soundstripe Categories API](https://apis.io/collections/soundstripe/open-soundstripe-categories-api/)
+- [Soundstripe Categories Playlists API](https://apis.io/collections/soundstripe/open-soundstripe-playlists-api/)
+- [Soundstripe Categories Private Playlists API](https://apis.io/collections/soundstripe/open-soundstripe-private-playlists-api/)
+- [Soundstripe Categories Songs API](https://apis.io/collections/soundstripe/open-soundstripe-songs-api/)
+- [Soundstripe Categories Sound Effects API](https://apis.io/collections/soundstripe/open-soundstripe-sound-effects-api/)
+- [Soundstripe Categories Supe Assets API](https://apis.io/collections/soundstripe/open-soundstripe-supe-assets-api/)
+- [Soundstripe Categories Supe Search API](https://apis.io/collections/soundstripe/open-soundstripe-supe-search-api/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Soundstripe Authentication](https://apis.io/security/soundstripe/soundstripe-authentication/)
+- [Soundstripe Domain Security](https://apis.io/security/soundstripe/soundstripe-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Soundstripe Plans Pricing](https://apis.io/plans/soundstripe/soundstripe-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Soundstripe Rate Limits](https://apis.io/rate-limits/soundstripe/soundstripe-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Soundstripe Finops](https://apis.io/finops/soundstripe/soundstripe-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.soundstripe.com)
-- [Sign Up](https://app.soundstripe.com/signup)
-- [Sign In](https://app.soundstripe.com/login)
 - [Pricing](https://www.soundstripe.com/library/pricing)
-- [Music](https://www.soundstripe.com/royalty-free-music)
-- [Sound Effects](https://www.soundstripe.com/sfx)
-- [Video](https://www.soundstripe.com/stock-video)
-- [Business](https://www.soundstripe.com/business)
-- [A P I Landing Page](https://www.soundstripe.com/api)
-- [Developer Portal](https://docs.soundstripe.com)
-- [Licensing](https://www.soundstripe.com/licensing)
 - [Blog](https://www.soundstripe.com/blog)
-- [Help](https://help.soundstripe.com)
-- [Contact](https://www.soundstripe.com/contact-us)
-- [Twitter](https://twitter.com/soundstripeinc)
-- [Instagram](https://www.instagram.com/soundstripe)
-- [LinkedIn](https://www.linkedin.com/company/soundstripe)
-- [YouTube](https://www.youtube.com/@Soundstripe)
-- [Plans](plans/soundstripe-plans-pricing.yml)
-- [Rate Limits](rate-limits/soundstripe-rate-limits.yml)
-- [Fin Ops](finops/soundstripe-finops.yml)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 30.5** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 50.1 |
+| Contract governance | 0.0 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 17.9 |
+| Access clarity | 30.3 |
+
+**Agent readiness 33.7** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | unknown |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 13.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/soundstripe/](https://apis.io/providers/soundstripe/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Soundstripe: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/soundstripe/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
